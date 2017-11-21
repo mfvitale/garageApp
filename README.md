@@ -34,3 +34,7 @@ See: https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#using
 
 ### Demo on Heroku
 https://garage-app-grails.herokuapp.com/
+
+#### Login
+user: susan
+pwd: password1
