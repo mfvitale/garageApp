@@ -33,6 +33,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
+    /* Heroku */
     provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-plugin-url-mappings"
     compile "org.grails:grails-plugin-rest"
@@ -64,10 +65,24 @@ dependencies {
     compile "org.grails.plugins:spring-security-core:3.2.0.M1"
     compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
 
+    /* Heroku */
     compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
     addResources = true
+}
+
+/* Heroku */
+tasks.assemble.doLast() {
+    println "O_O"
+
+    copy{
+        from(configurations.compile) {
+            include "webapp-runner*"
+        }
+        into "$rootDir/build/"
+    }
+
 }

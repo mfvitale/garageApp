@@ -16,12 +16,9 @@ task assembleServerAndClient(dependsOn: ['copyClientResources', ':server:assembl
 
     doLast {
         copy {
+            println "Copy build"
             from fileTree(dir: "${project(':server').buildDir}/libs/")
             into "$rootDir/build/"
-
-            from(configurations.compile) {
-                include "webapp-runner*"
-            }
         }
 
         logger.quiet "JAR generated at $rootDir/build/. It combines the server and client projects."
@@ -29,6 +26,7 @@ task assembleServerAndClient(dependsOn: ['copyClientResources', ':server:assembl
 }
 task(":server:assemble").mustRunAfter(copyClientResources)
 
+/* Heroku */
 task stage(dependsOn: 'assembleServerAndClient') {
 
     doLast {
