@@ -31,3 +31,6 @@ git push heroku master
 ```
 
 See: https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#using-grails-3
+
+### Demo on Heroku
+https://garage-app-grails.herokuapp.com/
