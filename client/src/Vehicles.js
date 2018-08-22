@@ -17,7 +17,7 @@ class Vehicles extends React.Component {
 
 
     return <div>
-      <Table striped bordered condensed hover>
+      <Table striped bordered condensed hover style={{marginTop: 1+'em'}}>
         <thead>
         <tr>
           <th>ID</th>

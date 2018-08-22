@@ -8,6 +8,7 @@ const Login = ({userDetails, error, inputChangeHandler, onSubmit}) => {
       <Jumbotron>
         <h1>Welcome to the Garage</h1>
       </Jumbotron>
+
       <Row>
         <Col sm={4} smOffset={4}>
 
